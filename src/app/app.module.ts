@@ -4,17 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
+import awsconfig from '../aws-exports';
+import {Amplify} from 'aws-amplify';
+import { HomeComponent } from './home/home.component';
+import { AuthenticatedComponent } from './authenticated/authenticated.component';
+
+Amplify.configure(awsconfig)
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    AuthenticatedComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,
+    AmplifyAuthenticatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

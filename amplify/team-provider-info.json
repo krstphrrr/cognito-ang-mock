@@ -1,0 +1,21 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cognitoangmock-dev-151945-authRole",
+      "UnauthRoleArn": "arn:aws:iam::969288771269:role/amplify-cognitoangmock-dev-151945-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::969288771269:role/amplify-cognitoangmock-dev-151945-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-cognitoangmock-dev-151945-deployment",
+      "UnauthRoleName": "amplify-cognitoangmock-dev-151945-unauthRole",
+      "StackName": "amplify-cognitoangmock-dev-151945",
+      "StackId": "arn:aws:cloudformation:us-west-1:969288771269:stack/amplify-cognitoangmock-dev-151945/c4bf2510-dd65-11ed-8515-023d7a1edc83",
+      "AmplifyAppId": "dojwaf281kgfv"
+    },
+    "categories": {
+      "auth": {
+        "cognitoangmock9f567cf4": {},
+        "userPoolGroups": {}
+      }
+    }
+  }
+}
