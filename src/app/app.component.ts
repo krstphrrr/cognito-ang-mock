@@ -8,7 +8,7 @@ import { CognitoService } from './cognito.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   isAuthenticated: boolean;
 
@@ -17,18 +17,6 @@ export class AppComponent implements OnInit {
     this.isAuthenticated = false;
   }
 
-  public ngOnInit(): void {
-    this.cognitoService.isAuthenticated()
-    .then((success: boolean) => {
-      this.isAuthenticated = success;
-    });
-  }
-
-  public signOut(): void {
-    this.cognitoService.signOut()
-    .then(() => {
-      this.router.navigate(['/signIn']);
-    });
-  }
+  
 
 }
