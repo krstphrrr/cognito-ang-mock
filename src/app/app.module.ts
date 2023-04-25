@@ -9,6 +9,8 @@ import awsconfig from '../aws-exports';
 import {Amplify} from 'aws-amplify';
 import { HomeComponent } from './home/home.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
+// import { httpInterceptorProviders } from './interceptor/http.interceptor';
+import { HttpClientModule } from '@angular/common/http';
 
 Amplify.configure(awsconfig)
 
@@ -23,8 +25,11 @@ Amplify.configure(awsconfig)
     AppRoutingModule,
     FormsModule,
     AmplifyAuthenticatorModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    // httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

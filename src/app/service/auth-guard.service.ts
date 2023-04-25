@@ -5,6 +5,8 @@ import { Router, CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterSt
 import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import {Amplify} from 'aws-amplify';
 
+const AUTH_API = 'http://localhost:3000/api/v1/aerosummary/';
+
 @Injectable()
 
 export class AuthGuardService {

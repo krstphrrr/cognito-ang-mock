@@ -6,7 +6,30 @@
     let-user="user"
     let-signOut="signOut"
   >
-    <h1>Welcome {{ user.username }}!</h1>
+    <br>
+    <form>
+      <button (click)="printUser(user)">console</button>
+      <br>
+      <button (click)="getPayload(user)">get</button>
+      <br>
+
+      <textarea rows="60" cols="60" spellcheck="false">
+        username: {{user.username}}
+
+        user email: {{user.attributes.email}}
+
+        accesstoken(jwt): {{user.signInUserSession.accessToken.jwtToken}}
+        
+        idtoken: {{user.signInUserSession.idToken.jwtToken}}
+        
+        pool userID: {{user.pool.userPoolId}}
+        
+        pool clientID: {{user.pool.clientId}}
+        
+        pool token: {{user.pool.storage.CognitoIdentityServiceProvider}}
+
+      </textarea>
+    </form>
     <button (click)="signOut()">Sign Out</button>
   </ng-template>
 </amplify-authenticator>
