@@ -10,25 +10,30 @@
     <form>
       <button (click)="printUser(user)">console</button>
       <br>
-      <button (click)="getPayload(user)">get</button>
+      <button (click)="getPayload(user)">get with good token</button>
+      <br>
+      <button (click)="getPayloadBADTOKEN(user)">get with bad token</button>
+      <br> 
+      <button (click)="getPayloadNOAUTHNDOW(user)">no token - NDOW</button>
+      <br>
+      <button (click)="getPayloadNOAUTH(user)">no token - PK=12080116133138912012-09-01</button>
       <br>
 
-      <textarea rows="60" cols="60" spellcheck="false">
-        username: {{user.username}}
+      <h3>username:  <b>{{user.username}}</b></h3>
+ 
+      <h3>user email: <b>{{user.attributes.email}}</b></h3> 
 
-        user email: {{user.attributes.email}}
+      <h3>accesstoken(jwt):</h3> <details>{{user.signInUserSession.accessToken.jwtToken}}</details>
 
-        accesstoken(jwt): {{user.signInUserSession.accessToken.jwtToken}}
-        
-        idtoken: {{user.signInUserSession.idToken.jwtToken}}
+
+      <!-- <textarea rows="60" cols="60" spellcheck="false">
+      
         
         pool userID: {{user.pool.userPoolId}}
         
         pool clientID: {{user.pool.clientId}}
         
-        pool token: {{user.pool.storage.CognitoIdentityServiceProvider}}
-
-      </textarea>
+      </textarea> -->
     </form>
     <button (click)="signOut()">Sign Out</button>
   </ng-template>
