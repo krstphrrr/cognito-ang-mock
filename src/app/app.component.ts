@@ -10,6 +10,10 @@ const URL_LS:string[]=[
 ]
 const URL_unprotected:string = "http://localhost:5016/api/v1/dataheader?PrimaryKey=12080116133138912012-09-01"
 
+const URL_LSDP:string[]=[
+  "http://localhost:5001/api/ndow"
+]
+
 const API_URL:string = URL_LS[1]; 
 
 @Component({
@@ -84,6 +88,39 @@ export class AppComponent implements OnInit {
 
   getPayloadNOAUTH(printme:any){
     this.http.get(URL_unprotected)
+    .subscribe((res:any)=>{
+      console.log(res)
+    })
+  }
+
+  getNDOW_DATAPACKET(printme:any){
+    const body = {
+      data:{
+        "primaryKeys":[
+          "17101012114127892017-09-01",
+        ],
+      },
+    }
+    
+    // JSON.stringify({
+    //   data: {
+    //     "primaryKeys": [
+    //       "17101012114127892017-09-01",
+    //     ]
+    //   }
+    // })
+
+    let id = this.authenticator.user.getSignInUserSession()
+    let idT = id?.getIdToken()
+    let idTJ = idT?.getJwtToken()
+
+    let headers = new HttpHeaders({
+      'ContentType': 'application/json',
+      'Authorization': `Bearer ${idTJ}`
+    })
+    let requestOptions = {headers: headers}
+    console.log(requestOptions)
+    this.http.put(URL_LSDP[0], body, requestOptions)
     .subscribe((res:any)=>{
       console.log(res)
     })

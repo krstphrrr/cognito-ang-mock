@@ -7,17 +7,27 @@
     let-signOut="signOut"
   >
     <br>
-    <form>
-      <button (click)="printUser(user)">console</button>
+    <div class="buttongroups" >
+    <!-- <form> -->
+      <h2><b>MAIN API TEST REQUESTS</b></h2>
+      <button (click)="printUser(user)">console.log aws user data</button>
       <br>
-      <button (click)="getPayload(user)">get with good token</button>
+      
+      <button (click)="getPayload(user)">GET: with good token</button>
       <br>
-      <button (click)="getPayloadBADTOKEN(user)">get with bad token</button>
+      <button (click)="getPayloadBADTOKEN(user)">GET: with bad token</button>
       <br> 
-      <button (click)="getPayloadNOAUTHNDOW(user)">no token - NDOW</button>
+      <button (click)="getPayloadNOAUTHNDOW(user)">GET: no token - NDOW</button>
       <br>
-      <button (click)="getPayloadNOAUTH(user)">no token - PK=12080116133138912012-09-01</button>
+      <button (click)="getPayloadNOAUTH(user)">GET: no token - PK=12080116133138912012-09-01</button>
       <br>
+    </div>
+    <div class="buttongroups" >
+      <h2><b>DATA PACKET TEST REQUESTS</b></h2>
+      <button (click)="getNDOW_DATAPACKET(user)">PUT: with good token on datapacket</button>
+      <br>
+    </div>
+
 
       <h3>username:  <b>{{user.username}}</b></h3>
  
@@ -34,7 +44,9 @@
         pool clientID: {{user.pool.clientId}}
         
       </textarea> -->
-    </form>
+    
+    
+
     <button (click)="signOut()">Sign Out</button>
   </ng-template>
 </amplify-authenticator>
