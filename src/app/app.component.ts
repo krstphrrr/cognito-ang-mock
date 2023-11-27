@@ -5,10 +5,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthenticatorService } from '@aws-amplify/ui-angular';
 
 const URL_LS:string[]=[
-  "http://localhost:3000/api/v1/dataHeader?ProjectKey=NDOW",
-  "http://localhost:5016/api/v1/dataHeader?ProjectKey=NDOW"
+  // "http://localhost:3000/api/v1/dataHeader?ProjectKey=NDOW&take=1",
+  "http://localhost:3000/api/v1/dataheader?PrimaryKey=12080116133138912012-09-01&take=1000",
+  "http://localhost:3000/api/v1/dataHeader?ProjectKey=NDOW&take=1000"
 ]
-const URL_unprotected:string = "http://localhost:5016/api/v1/dataheader?PrimaryKey=12080116133138912012-09-01"
+const URL_unprotected:string = "http://localhost:3000/api/v1/dataheader?PrimaryKey=12080116133138912012-09-01"
 
 const URL_LSDP:string[]=[
   "http://localhost:5001/api/ndow"
@@ -92,6 +93,13 @@ export class AppComponent implements OnInit {
       console.log(res)
     })
   }
+  getTEST(printme:any){
+    // this.authenticator.user.getSession()
+    // this.http.get(URL_unprotected)
+    // .subscribe((res:any)=>{
+    //   console.log(res)
+    // })
+  }
 
   getNDOW_DATAPACKET(printme:any){
     const body = {
@@ -101,15 +109,6 @@ export class AppComponent implements OnInit {
         ],
       },
     }
-    
-    // JSON.stringify({
-    //   data: {
-    //     "primaryKeys": [
-    //       "17101012114127892017-09-01",
-    //     ]
-    //   }
-    // })
-
     let id = this.authenticator.user.getSignInUserSession()
     let idT = id?.getIdToken()
     let idTJ = idT?.getJwtToken()
@@ -125,7 +124,27 @@ export class AppComponent implements OnInit {
       console.log(res)
     })
   }
+  getNDOW_DATAPACKET_BADTOKEN(printme:any){
+    const body = {
+      data:{
+        "primaryKeys":[
+          "17101012114127892017-09-01",
+        ],
+      },
+    }
+    let id = this.authenticator.user.getSignInUserSession()
+    let idT = id?.getIdToken()
+    let idTJ = idT?.getJwtToken()
 
-  
-
+    let headers = new HttpHeaders({
+      'ContentType': 'application/json',
+      'Authorization': `Bearer `
+    })
+    let requestOptions = {headers: headers}
+    console.log(requestOptions)
+    this.http.put(URL_LSDP[0], body, requestOptions)
+    .subscribe((res:any)=>{
+      console.log(res)
+    })
+  }
 }

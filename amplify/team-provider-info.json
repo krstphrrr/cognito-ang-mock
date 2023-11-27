@@ -17,5 +17,23 @@
         "userPoolGroups": {}
       }
     }
+  },
+  "amplifyk": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cognitoangmock-amplifyk-121650-authRole",
+      "UnauthRoleArn": "arn:aws:iam::301508766781:role/amplify-cognitoangmock-amplifyk-121650-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::301508766781:role/amplify-cognitoangmock-amplifyk-121650-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cognitoangmock-amplifyk-121650-deployment",
+      "UnauthRoleName": "amplify-cognitoangmock-amplifyk-121650-unauthRole",
+      "StackName": "amplify-cognitoangmock-amplifyk-121650",
+      "StackId": "arn:aws:cloudformation:us-east-1:301508766781:stack/amplify-cognitoangmock-amplifyk-121650/624f1f00-6c50-11ee-a0ab-0a1926664d03",
+      "AmplifyAppId": "d2prsw64joazzu"
+    },
+    "categories": {
+      "auth": {
+        "cognitoangmockcc95dbff": {}
+      }
+    }
   }
 }

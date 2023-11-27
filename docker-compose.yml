@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  ang-mock:
+    image: landscapedatacommons/ang-api-login:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5017:80"
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure

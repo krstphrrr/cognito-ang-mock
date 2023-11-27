@@ -6,9 +6,13 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
 
 const routes: Routes = [
 
-  // { path: 'authenticated', component: AuthenticatedComponent},
+  { path: 'authenticated', component: AuthenticatedComponent},
  
-  // { path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  // { 
+  //   path: '', 
+  //   component: HomeComponent, 
+  //   // canActivate: [AuthGuard]
+  // },
  
  ];
 

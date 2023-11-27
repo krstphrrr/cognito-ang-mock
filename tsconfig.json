@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist/cognito-ang-mock",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

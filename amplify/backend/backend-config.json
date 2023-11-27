@@ -1,7 +1,7 @@
 {
   "api": {},
   "auth": {
-    "cognitoangmock9f567cf4": {
+    "cognitoangmockcc95dbff": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -18,8 +18,7 @@
         ],
         "socialProviders": [],
         "usernameAttributes": [
-          "EMAIL",
-          "PHONE_NUMBER"
+          "EMAIL"
         ],
         "verificationMechanisms": [
           "EMAIL"
@@ -27,22 +26,6 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
-    },
-    "userPoolGroups": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId",
-            "AppClientIDWeb",
-            "AppClientID",
-            "IdentityPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "cognitoangmock9f567cf4"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Cognito-UserPool-Groups"
     }
   }
 }

@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 // import { httpInterceptorProviders } from './interceptor/http.interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 Amplify.configure(awsconfig)
 
@@ -26,6 +28,8 @@ Amplify.configure(awsconfig)
     FormsModule,
     AmplifyAuthenticatorModule,
     HttpClientModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     // httpInterceptorProviders
