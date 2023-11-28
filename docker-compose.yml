@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5017:80"
+      - "5018:80"
     deploy:
       replicas: 3
       update_config:
