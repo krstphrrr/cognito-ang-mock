@@ -1,0 +1,43 @@
+
+const awsmobile = {
+    "aws_project_region": "us-east-1",
+    "aws_cognito_identity_pool_id": "us-east-1:dfccb0b1-4946-4907-bb45-6f40ab8c7211",
+    "aws_cognito_region": "us-east-1",
+    "aws_user_pools_id": "us-east-1_Rc6dMvxPD",
+    "aws_user_pools_web_client_id": "22q9jatabk2fmtv973tiprqnf",
+    "oauth": {
+        "domain": "angmockcc95dbff-cc95dbff-amplifyk.auth.us-east-1.amazoncognito.com",
+        "scope": [
+            "phone",
+            "email",
+            "openid",
+            "profile",
+            "aws.cognito.signin.user.admin"
+        ],
+        "redirectSignIn": "http://localhost:4200/",
+        "redirectSignOut": "http://localhost:4200/",
+        "responseType": "code"
+    },
+    "federationTarget": "COGNITO_USER_POOLS",
+    "aws_cognito_username_attributes": [
+        "EMAIL"
+    ],
+    "aws_cognito_social_providers": [],
+    "aws_cognito_signup_attributes": [
+        "EMAIL"
+    ],
+    "aws_cognito_mfa_configuration": "OFF",
+    "aws_cognito_mfa_types": [
+        "SMS"
+    ],
+    "aws_cognito_password_protection_settings": {
+        "passwordPolicyMinLength": 8,
+        "passwordPolicyCharacters": []
+    },
+    "aws_cognito_verification_mechanisms": [
+        "EMAIL"
+    ]
+};
+
+
+export default awsmobile;

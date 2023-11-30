@@ -5,6 +5,15 @@ WORKDIR /opt/ng
 COPY ./src ./src
 COPY ./amplify ./package*.json ./tsconfig*.json /angular.json ./
 COPY ./conf.d ./
+
+RUN --mount=type=secret,id=EXPORTS,uid=1000 \
+    EXPORTS=$(cat /run/secrets/EXPORTS) \
+    && echo $EXPORTS > ./src/aws-exports.js
+
+
+# RUN EXPORTS=$(cat /run/secrets/EXPORTS)
+# RUN echo $EXPORTS > ./src/aws-exports.js
+# CMD ["tail", "-f", "/dev/null"]
 RUN npm ci
 RUN npm install -g @angular/cli@17.0.5
 RUN npm install -g @aws-amplify/cli
