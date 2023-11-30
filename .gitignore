@@ -64,3 +64,4 @@ amplifytools.xcconfig
 #amplify-do-not-edit-end
 **/access.txt
 **/exports.txt
+**/none.txt
