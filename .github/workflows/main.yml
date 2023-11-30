@@ -35,7 +35,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./wata.Dockerfile
+          file: ./Dockerfile
           push: true
           tags: landscapedatacommons/ang-api-login:${{ steps.package-version.outputs.version }}
 
