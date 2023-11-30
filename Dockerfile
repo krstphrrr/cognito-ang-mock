@@ -6,7 +6,7 @@ COPY ./src ./src
 COPY ./amplify ./package*.json ./tsconfig*.json /angular.json ./
 COPY ./conf.d ./
 RUN npm install
-RUN npm install -g @angular/cli@15.2.6
+RUN npm install -g @angular/cli@17.0.5
 # # building angular
 RUN ng build
 
