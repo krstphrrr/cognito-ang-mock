@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # secrets:
+    #   - EXPORTS
     ports:
       - "5018:80"
     deploy:
@@ -14,3 +16,6 @@ services:
         delay: 10s
       restart_policy:
         condition: on-failure
+# secrets:
+#   EXPORTS:
+#     file: ./exports.txt
