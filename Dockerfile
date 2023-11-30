@@ -7,6 +7,7 @@ COPY ./amplify ./package*.json ./tsconfig*.json /angular.json ./
 COPY ./conf.d ./
 RUN npm ci
 RUN npm install -g @angular/cli@17.0.5
+RUN npm install -g @aws-amplify/cli
 # # building angular
 RUN ng build
 
