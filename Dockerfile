@@ -6,19 +6,24 @@ COPY ./src ./src
 COPY ./amplify ./package*.json ./tsconfig*.json /angular.json ./
 COPY ./conf.d ./
 
-RUN --mount=type=secret,id=EXPORTS,uid=1000 \
-    # EXPORTS=$() 
-    cat /run/secrets/EXPORTS
-RUN echo ${EXPORTS}
+RUN --mount=type=secret,id=EXPORTS \
+     EXPORTS=$(cat /run/secrets/EXPORTS) \
+     && echo $EXPORTS > ./src/aws-exports.js \
+     && npm ci \
+     && npm install -g @angular/cli@17.0.5 \
+     && npm install -g @aws-amplify/cli \ 
+     && ng build
+    # cat /run/secrets/EXPORTS
+# RUN echo ${EXPORTS}
 
 # RUN EXPORTS=$(cat /run/secrets/EXPORTS)
-RUN echo $EXPORTS > ./src/aws-exports.js
+# RUN echo $EXPORTS > ./src/aws-exports.js
 # CMD ["tail", "-f", "/dev/null"]
-RUN npm ci
-RUN npm install -g @angular/cli@17.0.5
-RUN npm install -g @aws-amplify/cli
+# RUN npm ci
+# RUN npm install -g @angular/cli@17.0.5
+# RUN npm install -g @aws-amplify/cli
 # # building angular
-RUN ng build
+# RUN ng build
 
 # IMAGE 2: setting up the webserver
 FROM nginx:latest

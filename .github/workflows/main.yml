@@ -37,7 +37,7 @@ jobs:
           context: .
           file: ./Dockerfile
           secrets: |
-            "EXPORTS=${{secrets.EXPORTS}}"
+            EXPORTS=${{secrets.EXPORTS}}
           push: true
           tags: landscapedatacommons/ang-api-login:${{ steps.package-version.outputs.version }}
 
