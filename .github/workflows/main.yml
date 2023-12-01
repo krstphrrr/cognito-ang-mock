@@ -32,11 +32,11 @@ jobs:
       # pushing image
       - name: build and push 
         id: docker_build 
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5.1.0
         with:
           context: .
           file: ./Dockerfile
-          secrets: |
+          secret-envs: |
             EXPORTS=${{secrets.EXPORTS}}
           push: true
           tags: landscapedatacommons/ang-api-login:${{ steps.package-version.outputs.version }}
