@@ -33,9 +33,17 @@ export class AppComponent implements OnInit {
     //           private cognitoService: CognitoService,
               public http: HttpClient,
               public authenticator: AuthenticatorService,
+              public router: Router
               )
                {
     this.isAuthenticated = false;
+    this.authenticator = authenticator;
+    authenticator.subscribe((data: any) => {
+      if (data.authStatus === "authenticated") {
+        this.router.navigate(['/example']);
+      };
+      
+    })
   }
 
 

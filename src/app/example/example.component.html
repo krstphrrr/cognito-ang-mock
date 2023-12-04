@@ -1,0 +1,61 @@
+<ng-container *ngIf="authenticator.authStatus === 'authenticated'">
+
+  <div class="buttongroups2">
+    <h2><b>TOKEN USAGE EXAMPLE</b></h2>
+    
+    <mat-tab-group>
+      <mat-tab label="Python">
+        <pre lang="python3">
+
+          <!-- <span>import cognitojwt</span>
+          <span>token = 'YOUR_TOKEN_HERE'</span>
+          <span>REGION = '**-****-*'</span>
+          <span>USERPOOL_ID = 'eu-west-1_*******'</span>
+          <span>APP_CLIENT_ID = '1p3*********'</span> -->
+          <span>import requests</span>
+          <span>import json</span>
+          <br>
+          <span>def main():</span>
+          <span>  lambda_authorizer = "https://oox5sjuicqhezohcpnbsesp32y0yrcbm.lambda-url.us-east-1.on.aws/"</span>
+          <span>  username = "{{authenticator.user.attributes?.email}}"</span>
+          <span>  password = ********</span>
+          <span>  api_endpoint =  "https://devapi.landscapedatacommons.org/api/v1/datagap?ProjectKey=NDOW&take=10"</span>
+          <br>
+          <span>  token = get_auth_token(lambda_authorizer, username, password)</span>
+          <span>  token = token.replace("Auth result: ", "")</span>
+          <span>  token = json.loads(token)["AuthenticationResult"]["IdToken"]</span>
+          <span>  final_response = fetch_api_content(api_endpoint, token)</span>
+          <br>
+          <span>  print(final_response)</span>
+          <br>
+          <span>def get_auth_token(lambda_fun, user, passw):</span>
+          <span ngNonBindable>  body = {{'username':user, 'password' passw }}</span>
+         
+          <span>  response = requests.post(lambda_fun)</span>
+          <span>  return response.text</span>
+          <br>
+          <span>def fetch_api_content(api_endpoint, access_token):</span>
+          <span ngNonBindable>  auth_header = {{"Authorization", f"Bearer {{access_token}}" }}</span>
+          <span>  api_response = requests.get(api_endpoint, headers=auth_header)</span>
+          <span>  return api_response.json()</span>
+          <br>
+          <br>
+          <span>main()</span>
+                    <br>
+          <br>
+
+        </pre>
+      </mat-tab>
+      <mat-tab label="R">
+        
+      </mat-tab>
+    </mat-tab-group>
+    
+  </div>
+  
+</ng-container>
+
+<!-- Render sign-in screen otherwise with authenticator -->
+<ng-container *ngIf="authenticator.authStatus !== 'authenticated'">
+  sorry, no
+</ng-container>

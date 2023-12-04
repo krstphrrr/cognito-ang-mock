@@ -13,6 +13,7 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
 import { HttpClientModule } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExampleComponent } from './example/example.component';
 
 Amplify.configure(awsconfig)
 
@@ -20,7 +21,9 @@ Amplify.configure(awsconfig)
   declarations: [
     AppComponent,
     HomeComponent,
+    
     AuthenticatedComponent,
+    ExampleComponent,
   ],
   imports: [
     BrowserModule,
