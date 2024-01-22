@@ -6,10 +6,10 @@ import { AuthenticatorService } from '@aws-amplify/ui-angular';
 
 const URL_LS:string[]=[
   // "http://localhost:3000/api/v1/dataHeader?ProjectKey=NDOW&take=1",
-  "http://localhost:3000/api/v1/dataheader?PrimaryKey=12080116133138912012-09-01&take=1000",
-  "http://localhost:3000/api/v1/dataHeader?ProjectKey=NDOW&take=1000"
+  "http://localhost:3000/api/batch/dataheader?PrimaryKey=12080116133138912012-09-01&take=1000",
+  "http://localhost:3000/api/batch/dataHeader?ProjectKey=NDOW&take=1000"
 ]
-const URL_unprotected:string = "http://localhost:3000/api/v1/dataheader?PrimaryKey=12080116133138912012-09-01"
+const URL_unprotected:string = "http://localhost:3000/api/batch/dataheader?PrimaryKey=12080116133138912012-09-01"
 
 const URL_LSDP:string[]=[
   "http://localhost:5001/api/ndow"

@@ -19,7 +19,7 @@
           <span>  lambda_authorizer = "https://oox5sjuicqhezohcpnbsesp32y0yrcbm.lambda-url.us-east-1.on.aws/"</span>
           <span>  username = "{{authenticator.user.attributes?.email}}"</span>
           <span>  password = ********</span>
-          <span>  api_endpoint =  "https://devapi.landscapedatacommons.org/api/v1/datagap?ProjectKey=NDOW&take=10"</span>
+          <span>  api_endpoint =  "https://devapi.landscapedatacommons.org/api/batch/datagap?ProjectKey=NDOW&take=10"</span>
           <br>
           <span>  token = get_auth_token(lambda_authorizer, username, password)</span>
           <span>  token = token.replace("Auth result: ", "")</span>
