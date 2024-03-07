@@ -18,7 +18,19 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "uuid"
+              "uuid",
+              "lodash/flatten",
+              "lodash/noop",
+              "lodash/isEqual",
+              "lodash/isEmpty",
+              "lodash/get",
+              "url",
+              "ulid",
+              "buffer",
+              "camelcase-keys",
+              "classnames",
+              "@aws-crypto/sha256-browser",
+              "@aws-crypto/sha256-js"
             ],
             "outputPath": "dist/cognito-ang-mock",
             "index": "src/index.html",

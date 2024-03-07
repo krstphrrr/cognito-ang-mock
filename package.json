@@ -1,6 +1,6 @@
 {
   "name": "cognito-ang-mock",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -23,6 +23,7 @@
     "@aws-amplify/ui-angular": "^3.2.14",
     "@types/google-one-tap": "^1.2.2",
     "aws-amplify": "^5.0.25",
+    "http-proxy-agent": "^7.0.2",
     "rxjs": "~7.8.0",
     "zone.js": "~0.14.2"
   },

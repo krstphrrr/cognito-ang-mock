@@ -47,6 +47,39 @@
         </pre>
       </mat-tab>
       <mat-tab label="R">
+        <pre lang="R">
+          <span>library(httr)</span>
+          <br>
+          <span>main <- function() {{'{'}}</span>
+          <span>  lambda_authorizer <- "https://oox5sjuicqhezohcpnbsesp32y0yrcbm.lambda-url.us-east-1.on.aws/"</span>
+          <span>  username <- "{{authenticator.user.attributes?.email}} </span>
+          <span>  password <- "********"</span>
+          <span>  api_endpoint <- "https://devapi.landscapedatacommons.org/api/batch/datagap?ProjectKey=NDOW&take=10"</span>
+          <br>
+          <span>  token <- get_auth_token(lambda_authorizer, username, password)</span>
+          <span>  token <- gsub("Auth result: ", "", token)</span>
+          <span>  token <- jsonlite::fromJSON(token)$AuthenticationResult$IdToken</span>
+          <span>  final_response <- fetch_api_content(api_endpoint, token)</span>
+          <br>
+          <span>  print(final_response)</span>
+          <span>{{'}'}}</span>
+          <br>
+          <span>get_auth_token <- function(lambda_fun, user, passw) {{'{'}}</span>
+          <span>  body <- list(username = user, password = passw)</span>
+          <span>  response <- POST(lambda_fun, body = body)</span>
+          <span>  return(content(response, "text"))</span>
+          <span>{{'}'}}</span>
+          <br>
+          <span>fetch_api_content <- function(api_endpoint, access_token) {{'{'}}</span>
+          <span>  auth_header <- paste0("Bearer ", access_token)</span>
+          <span>  api_response <- GET(api_endpoint, add_headers(Authorization = auth_header))</span>
+          <span>  return(content(api_response, "parsed"))</span>
+          <span>{{'}'}}</span>
+          <br>
+          <span>main()</span>
+
+        
+        </pre>
         
       </mat-tab>
     </mat-tab-group>
