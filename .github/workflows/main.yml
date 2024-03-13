@@ -17,7 +17,8 @@ jobs:
 
     #  reading package json for version
       - name: Read package.json
-        uses: tyankatsu0105/read-package-version-actions@v1
+        # uses: krstphrrr/package-json-version-reader@v1.0.0
+        uses: krstphrrr/go-package-reader@v1.0.0
         id: package-version
 
     # keeping track of docker image on the hub 
