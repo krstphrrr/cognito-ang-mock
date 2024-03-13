@@ -19,6 +19,8 @@ jobs:
       - name: Read package.json
         # uses: krstphrrr/package-json-version-reader@v1.0.0
         uses: krstphrrr/go-package-reader@v1.0.0
+        with:
+          path: ./
         id: package-version
 
     # keeping track of docker image on the hub 
