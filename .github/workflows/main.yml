@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4.1.1
 
     #  reading package json for version
-      - name: Read package.json
+      - name: Read package.json 1
         # uses: krstphrrr/package-json-version-reader@v1.0.0
         uses: krstphrrr/go-package-reader@v1.0.0
         with:
